@@ -1,0 +1,27 @@
+{% extends 'QAapp/navbar.html' %}
+{% block title %}User Login{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card mt-5">
+        <h5 class="card-header">User Login</h5>
+        <div class="card-body">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <input type="text" name="username" placeholder="Username..." class="form-control">
+                </div>
+                <div class="input-group mb-2">
+                        <input type="password" name="password" placeholder="Password..." class="form-control" >
+                </div>
+
+                    
+                <button> <input class="btn login_btn" type="submit" value="Login"></button>
+                       
+            </form>
+        </div>
+    </div>
+</div>
+<div class="d-flex justify-content-center links">
+    Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+</div>
+{% endblock %}

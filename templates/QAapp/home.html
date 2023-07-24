@@ -1,0 +1,16 @@
+{% extends 'QAapp/navbar.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div>
+<div class="card">
+    <div class="card-body">
+        {% for question in questions %}
+        <h5 class="card-title " ><a href="/detail/{{question.id}}" style="text-decoration:none">{{question.title}}</a></h5>
+        <p><span>{{question.user}}</span> <span>{{question.add_time | date:'d.m.y H:i:s'}}</span></p>
+        <hr>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

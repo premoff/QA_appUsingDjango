@@ -1,0 +1,23 @@
+{% block title %}User Register{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card mt-5">
+        <h5 class="card-header">User Register</h5>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <table class="table table-bordered">
+                    {{form.as_p}}
+                    <p style="color: red;">{{form.errors}}</p>
+                    <tr>
+                        <td colspan="2">
+                            <button class="btn btn-primary">Register</button>
+                            <button><a class="nav-link" href="{% url 'login' %}">Login</a></button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
